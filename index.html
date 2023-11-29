@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartbreak Animation</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            caret-color: transparent;
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            font-size: 5rem;
+        }
+
+        #hrt,
+        #hrtbrk,
+        #hrtpst {
+            line-height: 0%;
+            animation: growAndHide 4s infinite alternate;
+        }
+
+        #hrtbrk,
+        #hrtpst {
+            display: none;
+        }
+
+        @keyframes growAndHide {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(6);
+            }
+        }
+
+        @keyframes breakAnimation {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(6);
+            }
+        }
+
+        @keyframes hrtpstAniimation {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(6);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span id="hrt">❤️</span>
+        <span id="hrtbrk">💔</span>
+        <span id="hrtpst">❤️‍🩹</span>
+    </div>
+    <script>
+        const hrt = document.getElementById('hrt');
+        const hrtbrk = document.getElementById('hrtbrk');
+        const hrtpst = document.getElementById('hrtpst');
+
+        hrt.addEventListener('click', () => {
+            hrt.style.display = 'none';
+            hrtbrk.style.display = 'block';
+        })
+        hrtbrk.addEventListener('click', () => {
+            hrtpst.style.display = 'Block';
+            hrtbrk.style.display = 'none';
+        })
+        hrtpst.addEventListener('click', () => {
+            location.reload();
+        })
+    </script>
+</body>
+
+</html>
